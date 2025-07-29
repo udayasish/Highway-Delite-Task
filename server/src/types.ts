@@ -34,6 +34,9 @@ export interface JWTPayload {
 export interface AuthenticatedRequest<P = any, ResBody = any, ReqBody = any>
   extends Request<P, ResBody, ReqBody> {
   user?: JWTPayload;
+  body: ReqBody;
+  params: P;
+  headers: any;
 }
 
 // Validation schemas

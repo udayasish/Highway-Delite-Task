@@ -19,7 +19,7 @@ export const registerSchema = z.object({
       /^\d{2}\/\d{2}\/\d{4}$/,
       "Date of birth must be in DD/MM/YYYY format"
     )
-    .refine((date) => {
+    .refine((date: string) => {
       const [day, month, year] = date.split("/");
       if (!day || !month || !year) return false;
       const birthDate = new Date(
